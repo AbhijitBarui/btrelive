@@ -79,7 +79,6 @@ DATABASES = {
         'NAME': 'realestatedb',
         'USER': 'postgres',
         'PASSWORD': config('PASSWORD'),
-        'HOST': 'localhost'
     }
 }
 
