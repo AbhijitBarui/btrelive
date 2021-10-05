@@ -1,4 +1,5 @@
 import os
+import django_heroku
 from decouple import config
 from pathlib import Path
 
@@ -17,7 +18,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['real-estate-hdep.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['real-estate-hdep.herokuapp.com']
 
 
 # Application definition
@@ -77,9 +78,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'realestatedb',
-        'USER': 'postgres',
-        'PASSWORD': config('PASSWORD'),
-        'HOST': 'localhost'
     }
 }
 
@@ -147,3 +145,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'barui504@gmail.com'
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
+
+django_heroku.settings(locals())
