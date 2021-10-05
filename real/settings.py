@@ -1,4 +1,5 @@
 import os
+import django_heroku
 from decouple import config
 from pathlib import Path
 
@@ -144,3 +145,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'barui504@gmail.com'
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
+
+django_heroku.settings(locals())
